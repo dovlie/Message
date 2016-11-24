@@ -1,0 +1,60 @@
+﻿html body div span applet object iframe h1 h2 p a{margin:0px;padding:0px;}
+body {
+   
+    background: url(img/sakura.jpg)no-repeat center 0px;
+    background-attachment: fixed;
+	background-size: cover;
+	
+}
+#T-main-box{
+	width: 100%;
+	/*color:rgba();*/
+}
+#T-main-login{
+ 	font-family:"微软雅黑" ;
+	padding: 2em;
+	width: 65%;
+	margin: 3.5em auto;
+	/*height: 100px;*/
+	background-color: rgba(0,3,6,0.4);
+	font-family: "arial";
+	color: #ffc;
+}
+.T-main-login-inp{
+	/*width: 100%;*/
+	/*margin: 2em;*/
+	margin-bottom:1em;
+color: #ffc;
+	
+}
+#spanName{
+	color: #f90;
+}
+#T-main-login input[type='text'],#T-main-login input[type='password']{
+	font-family: "微软雅黑";
+	cursor: pointer;
+	font-size: 1.5em;
+	color: #fff;
+	width: 100%;
+	border:none;
+	outline: none; 
+	border-bottom: 2px solid #999;
+	background-color: inherit;
+}
+.T-main-but{
+	-webkit-appearance:none;
+	/*display: block;*/
+	margin: auto;
+	margin-top:15px;
+	border:none;
+	width: 100%;
+	height:3.5em;
+	background-color: rgba(3,3,6,0.6);
+	color: #ccc;
+	font-size: 1em;
+	cursor: pointer;
+}
+.T-main-but:hover{
+	background-color: #fff;
+	color:#000;
+}

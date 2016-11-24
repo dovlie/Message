@@ -1,0 +1,146 @@
+<!-- 登陆成功页面 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>welcome to here</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="Tmainpage.css">
+</head>
+<body>
+<div id="Tpage">
+<div id="top-fiexd">
+	<span class="item">
+		<img src="img/logo.png">
+	</span>
+	<span class="item"></span>
+	<span class="item" id="item3">
+		
+	</span>
+</div>
+	<div id="Tpage-top">
+		<div id="Mesbox">
+			<form id="Messageinput" action="message.php" method="POST">
+				<textarea id="Metext" name="Metext"></textarea>
+				<input id="messinp" type="submit" onclick="message()" value="发表">
+			</form>
+		</div>
+	</div>
+	<div id="Tpage-main">
+		<div id="message">
+			
+		</div>
+	</div>
+	<dir id="Tpage-foot">
+		
+	</dir>
+</div>
+</body>
+<script type="text/javascript"> 
+
+function getCookie(c_name)
+{
+if (document.cookie.length>0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=")
+  if (c_start!=-1)
+    { 
+    c_start=c_start + c_name.length+1 
+    c_end=document.cookie.indexOf(";",c_start)
+    if (c_end==-1) c_end=document.cookie.length
+    return unescape(document.cookie.substring(c_start,c_end))
+    } 
+  }
+return "";
+}
+
+var usersname=getCookie('usersname');
+document.getElementById('item3').innerHTML="welcome,"+usersname;
+
+//1、获取url?后的值，利用split('&')将值转换成数组遍历；
+//sArgName表示要获取哪个参数的值 
+//  function GetArgsFromHref(sArgName) 
+// 　　{ 
+//  var sHref = window.location.href;
+// 　　var args = sHref.split("?"); 
+// 　　retval = ""; 
+// 　　if(args[0] == sHref) /*参数为空*/ 
+// 　　{ 
+// 　　return retval; /*无需做任何处理*/ 
+// 　　} 
+// 　　var str = args[1]; 
+// 　　args = str.split("="); 
+// 　　
+// 　　str = args[0];
+// 　　if(str == sArgName)
+// 	 retval = decodeURI(args[1]);
+// 	 //使从url上提取的乱码转换为中文
+// 　　document.getElementById('item3').innerHTML="welcome,"+retval+usersname;
+// 　　//return retval; 
+  
+// 　　} 
+// 	GetArgsFromHref('uname'); 
+
+var xmlHttp
+
+function message()
+{
+	var str=document.getElementById("Metext");
+if (str.length==0)
+  { 
+  // document.getElementById("spanName").innerHTML=""
+  return
+  }
+xmlHttp=GetXmlHttpObject()
+if (xmlHttp==null)
+  {
+  alert ("Browser does not support HTTP Request")
+  return
+  } 
+var url="refresh.php"
+url=url+"?uname="+retval
+url=url+"&sid="+Math.random()
+xmlHttp.onreadystatechange=stateChanged 
+xmlHttp.open("POST",url,true)
+xmlHttp.send(null)
+} 
+
+function stateChanged() 
+{ 
+if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+ { 
+ document.getElementById("message").innerHTML=xmlHttp.responseText 
+ } 
+}
+
+function GetXmlHttpObject()
+{
+var xmlHttp=null;
+try
+ {
+ // Firefox, Opera 8.0+, Safari
+ xmlHttp=new XMLHttpRequest();
+ }
+catch (e)
+ {
+ // Internet Explorer
+ try
+  {
+  xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+  }
+ catch (e)
+  {
+  xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+ }
+return xmlHttp;
+}
+
+
+
+	
+</script>
+
+
+
+</html>

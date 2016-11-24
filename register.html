@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="T-main.css">
+</head>
+<body>
+<div id="T-main-box">
+<form id="login" action="" method="post">
+	<div id="T-main-login">
+		<div class="T-main-login-inp">
+			<h2>请输入用户名</h2>
+			<input type="text" name="username" id="username" onblur="showHint(this.value)">
+			<p id="spanName"></p>
+		</div>
+		<div class="T-main-login-inp">
+			<h2>请输入密码</h2>
+			<input type="Password" name="userpassword" id="userpassword">
+		</div>
+		<div class="T-main-login-inp">
+			<input class="T-main-but" type="button" onclick="register()" value="注 册">
+		</div>
+	</div>
+</form>
+
+<script type="text/javascript">
+
+
+var xmlHttp
+
+function showHint(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("spanName").innerHTML=""
+  return
+  }
+xmlHttp=GetXmlHttpObject()
+if (xmlHttp==null)
+  {
+  alert ("Browser does not support HTTP Request")
+  return
+  } 
+var url="ajaxregister.php"
+url=url+"?username="+str
+url=url+"&sid="+Math.random()
+xmlHttp.onreadystatechange=stateChanged 
+xmlHttp.open("GET",url,true)
+xmlHttp.send(null)
+} 
+
+function stateChanged() 
+{ 
+if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+ { 
+ document.getElementById("spanName").innerHTML=xmlHttp.responseText 
+ } 
+}
+
+function GetXmlHttpObject()
+{
+var xmlHttp=null;
+try
+ {
+ // Firefox, Opera 8.0+, Safari
+ xmlHttp=new XMLHttpRequest();
+ }
+catch (e)
+ {
+ // Internet Explorer
+ try
+  {
+  xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+  }
+ catch (e)
+  {
+  xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+ }
+return xmlHttp;
+}
+
+
+	function register(){
+		var lg=document.getElementById('login');
+		lg.action='register.php';
+		if(xmlHttp.responseText=="该用户名可用"){
+		lg.submit();}
+	}
+	
+</script>
+
+</div>
+</body>
+</html>

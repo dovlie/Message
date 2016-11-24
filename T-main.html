@@ -1,0 +1,52 @@
+﻿<!-- 登录界面 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thome</title>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="T-main.css">
+</head>
+<body>
+<div id="T-main-box">
+<form id="login" action="" method="post">
+	<div id="T-main-login">
+		<div class="T-main-login-inp">
+			<h2>用户名</h2>
+			<input type="text" name="username" id="username">
+			<p id="spanName"></p>
+		</div>
+		<div class="T-main-login-inp">
+			<h2>密码</h2>
+			<input type="Password" name="userpassword" id="userpassword">
+		</div>
+		<p id="hint"></p>
+		<div class="T-main-login-inp">
+			<input class="T-main-but" type="button" onclick="sign()"value="登 录">
+			<input class="T-main-but" type="button" onclick="register()" value="注 册">
+		</div>
+	</div>
+</form>
+
+<script type="text/javascript">
+
+	function sign(){
+		var lg=document.getElementById('login');
+	var name=document.getElementById('username');
+	var password=document.getElementById('userpassword');
+	if(name.value!=""&&password.value!=""){
+		lg.action='sign.php';
+		lg.submit();}
+	else{document.getElementById('hint').innerHTML="用户名或密码不能为空！";}
+	};
+	function register(){
+		window.location="register.html";
+	}
+	
+</script>
+
+</div>
+</body>
+</html>

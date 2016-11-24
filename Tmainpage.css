@@ -1,0 +1,136 @@
+﻿html,body,div,span,applet,object,iframe,h1,h2,p,a{outline: none;margin:0;padding:0;}
+body{
+
+}
+#Tpage{
+	width:100%;
+height:100%;
+	/*padding: 20px;*/
+	/*width: inherit;*/
+	/*background-color: rgba(200,230,100,0.8);*/
+	font-family: "微软雅黑";
+	background: url(img/sakura.jpg) ;
+background-size:100%;
+    background-attachment: fixed;
+	background-size: cover;
+}
+#Tpage #logo{
+	height: 3.5em;
+	width: 7em;
+}
+#top-fiexd{
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background-color: #633;
+	opacity: 0.9;
+	display: -webkit-flex;
+}
+.item{
+	height: inherit;;
+	
+}
+#item3{
+	text-align: center;
+	line-height: 60px;
+	font-size: "微软雅黑";
+	color: #fff;
+}#Tpage-body{
+	text-align: center;
+	width: 100%;
+	/*background-color:#fff; */
+}
+#Tpage-top{
+	padding-top:100px;
+	width: 100%;
+	display: -webkit-flex;
+	text-align: center;
+	/*background-color: #ccc;*/
+}
+#Tpage-main{
+	width: 100%;
+	text-align: center;
+	/*background-color: #000;*/
+padding-bottom:20px;
+}
+#Mesbox{
+	width: 80%;
+	margin: auto;	
+	height: 200px;
+	flex: 1;
+	text-align: center;
+}
+#Metext{
+	border:none;
+	box-shadow:2px 2px 15px #933;
+	-moz-box-shadow:inset 0 0 15 #993;
+	-webkit-box-shadow:inset 2px 2px 15px #933;
+	outline: none;
+	font-family: "微软雅黑";
+	border-radius: 10px;
+	padding: 10px;
+	resize:none;
+	display: block;
+	width: 80%;
+	height: 100px;
+	margin: auto;
+	background-color: #ccc;
+	opacity: 0.9;
+	font-size: 1.5em;
+	color: #333;
+	margin-bottom: 10px;
+}
+#messinp{
+	-webkit-appearance:none;
+	border-radius: 10px;
+	margin: auto;
+	border-radius: 10px;
+	padding: 10px;
+	width: 80%;
+	height: 40px;
+	background-color: #ccc;
+	opacity: 0.9;
+	margin: auto;
+	border:none;
+	font-size: 1em;
+	cursor: pointer;
+	letter-spacing:20px;
+	font-family: "微软雅黑";
+}
+#messinp:hover{
+	background-color: #9cc;
+	color: #fff;
+}
+#message{
+	margin: auto;
+	width: 80%;
+	/*background-color: #deb887;*/
+	opacity: 0.8;
+}
+#message table{
+	text-align: center;
+	width:100%;
+	/*font-family:  Arial, "微软雅黑";*/
+}
+#message table td{
+	/*display: block;*/
+	/*height: 10em;*/
+	font-size: 1em;
+	word-break: break-all;
+    word-wrap: break-word;
+}
+#message tr:nth-child(odd) td{
+	border-radius: 10px;
+	background: #9c6;
+	color: #036;
+}
+#message tr:nth-child(even) td{
+	border-radius: 10px;
+	background: #ffc;
+	color: #c66;
+}
+#message sub{
+	display: block;
+	width: inherit;
+}
+sup{color:#933;}
